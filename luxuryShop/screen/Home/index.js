@@ -43,8 +43,6 @@ class Home extends React.Component {
     };
   };
 
-  componentDidMount = () => this.changeScreen();
-
   changeScreen = () => this.props.navigation.navigate("Product");
 
   renderSectionHeader(title) {
