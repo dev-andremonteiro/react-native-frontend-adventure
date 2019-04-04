@@ -1,9 +1,17 @@
+<p align="center" >
+    <img src="https://user-images.githubusercontent.com/19479358/55590145-1080be00-5700-11e9-83bf-83dde23765dc.png" width="700"/>
 <p align="center">
-  <a title='License' href="https://github.com/FaridSafi/react-native-gifted-chat/blob/master/LICENSE" height="18">
+ <img src="https://thumbs.gfycat.com/ShallowFakeAmazontreeboa-size_restricted.gif" width="200"/>
+    <img src="https://thumbs.gfycat.com/LastingElegantAllensbigearedbat-size_restricted.gif" width="300"/>
+  </p>
+<p align="center">
+<a title='License' href="https://github.com/FaridSafi/react-native-gifted-chat/blob/master/LICENSE" height="18">
     <img src='https://img.shields.io/badge/license-MIT-blue.svg' />
-  </a>
-</p>
-
+</a>
+  </p>
+  <p align="center">
+ <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=expo.io/@menorme/luxury-shop">
+  </p>
 # Luxury Goods App
 
 built with [React Native](https://github.com/facebook/react-native) and [Expo](https://github.com/expo/expo).
