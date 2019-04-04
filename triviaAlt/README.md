@@ -1,8 +1,17 @@
+<p align="justify" >
+    <img alt="react-native-fancy-drawer" src="https://user-images.githubusercontent.com/19479358/55589471-4a50c500-56fe-11e9-8ca5-98225cc906f5.JPG" width="260"/>
+    <img alt="react-native-fancy-drawer" src="https://thumbs.gfycat.com/ImmenseCostlyAnhinga-size_restricted.gif" width="200" />
+</p>
+
 <p align="center">
 <a title='License' href="https://github.com/FaridSafi/react-native-gifted-chat/blob/master/LICENSE" height="18">
     <img src='https://img.shields.io/badge/license-MIT-blue.svg' />
 </a>
-  </p>
+</p>
+
+<p align="center">
+ <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=expo.io/@menorme/trivia-alternative">
+</p>
 
 # Trivia Alternative Style
 
@@ -30,6 +39,6 @@ Show some :heart: for designers that made this possible
 
 ## Developer
 
-André Monteiro [dev-andremonteiro](https://github.com/dev-andremonteiro)
+AndrÃ© Monteiro [dev-andremonteiro](https://github.com/dev-andremonteiro)
 
 [Follow me on Twitter](https://twitter.com/DAndremonteiro) :)
