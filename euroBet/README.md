@@ -1,8 +1,13 @@
+<p align="center" >
+    <img src="https://user-images.githubusercontent.com/19479358/55590514-1cb94b00-5701-11e9-82e1-f03a6e8a5aaa.png" height="800"/>
 <p align="center">
-  <a title='License' href="https://github.com/FaridSafi/react-native-gifted-chat/blob/master/LICENSE" height="18">
+<a title='License' href="https://github.com/FaridSafi/react-native-gifted-chat/blob/master/LICENSE" height="18">
     <img src='https://img.shields.io/badge/license-MIT-blue.svg' />
-  </a>
-</p>
+</a>
+  </p>
+  <p align="center">
+ <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=expo.io/@menorme/euro-bet">
+  </p>
 
 # EuroBet App
 
