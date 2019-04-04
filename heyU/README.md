@@ -1,8 +1,17 @@
+<p align="center" >
+    <img src="https://user-images.githubusercontent.com/19479358/55590750-c1d42380-5701-11e9-90f3-ac8ff3df37dd.png" width="800"/>
 <p align="center">
-  <a title='License' href="https://github.com/FaridSafi/react-native-gifted-chat/blob/master/LICENSE" height="18">
+ <img src="https://thumbs.gfycat.com/WindyWelldocumentedLiger-size_restricted.gif" width="300"/>
+    <img src="https://thumbs.gfycat.com/ClumsyMisguidedBlackfly-size_restricted.gif" width="200"/>
+  </p>
+<p align="center">
+<a title='License' href="https://github.com/FaridSafi/react-native-gifted-chat/blob/master/LICENSE" height="18">
     <img src='https://img.shields.io/badge/license-MIT-blue.svg' />
-  </a>
-</p>
+</a>
+  </p>
+  <p align="center">
+ <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=expo.io/@menorme/heyu">
+  </p>
 
 # HeyU Mobile App
 
