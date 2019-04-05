@@ -11,6 +11,8 @@ Here I make cool React Native Apps using [Dribbble](https://dribbble.com/) desig
 | [Trivia Alternative](https://dribbble.com/shots/6207795-Trivia-App-Alternative/attachments) | <img src="https://cdn.dribbble.com/users/1665382/screenshots/6207795/emirates_-_home_alternative_2x.png" width="120" /> | 2 | ~2 hours | :white_check_mark: |
 | [Your App Here](https://github.com/dev-andremonteiro/react-native-frontend-adventure/issues/new?assignees=&labels=&template=feature_request.md&title=) | Awesome design | - | ~ hours | :point_left: |
 
+*Inpired by [Dribbble2React](https://github.com/react-ui-kit/dribbble2react) :heart:*
+
 
 [My Expo Profile](https://expo.io/@menorme)
 
