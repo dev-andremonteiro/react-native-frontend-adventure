@@ -1,26 +1,27 @@
-import React from "react";
+import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
   Image,
   ImageBackground,
-  StatusBar
-} from "react-native";
-import { Asset } from "expo";
+  SafeAreaView,
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+} from 'react-native';
 
-import { Block, Text } from "./components";
-import * as theme from "./theme";
+import { Asset } from 'expo-asset';
+
+import { Block, Text } from './components';
+import * as theme from './theme';
 
 class App extends React.Component {
   state = {
     iconsLoaded: false,
-    selectedCard: 0
+    selectedCard: 0,
   };
 
   loadIcons(images) {
-    return images.map(image => {
-      if (typeof image === "string") {
+    return images.map((image) => {
+      if (typeof image === 'string') {
         return Image.prefetch(image);
       } else {
         return Asset.fromModule(image).downloadAsync();
@@ -30,17 +31,17 @@ class App extends React.Component {
 
   async componentDidMount() {
     const imageAssets = this.loadIcons([
-      require("./assets/back.png"),
-      require("./assets/collapse.png"),
-      require("./assets/fire.png"),
-      require("./assets/fire-active.png"),
-      require("./assets/light.png"),
-      require("./assets/light-active.png"),
-      require("./assets/ranking.png"),
-      require("./assets/star.png"),
-      require("./assets/star-active.png"),
-      require("./assets/top-left.png"),
-      require("./assets/top-right.png")
+      require('./assets/back.png'),
+      require('./assets/collapse.png'),
+      require('./assets/fire.png'),
+      require('./assets/fire-active.png'),
+      require('./assets/light.png'),
+      require('./assets/light-active.png'),
+      require('./assets/ranking.png'),
+      require('./assets/star.png'),
+      require('./assets/star-active.png'),
+      require('./assets/top-left.png'),
+      require('./assets/top-right.png'),
     ]);
     await Promise.all([...imageAssets]).then(() =>
       this.setState({ iconsLoaded: true })
@@ -57,13 +58,13 @@ class App extends React.Component {
         middle
         row
         style={styles.header}
-        space={"between"}
+        space={'between'}
       >
         <Image
           style={styles.topIcon}
-          source={require("./assets/top-left.png")}
+          source={require('./assets/top-left.png')}
         />
-        <Block center space={"between"}>
+        <Block center space={'between'}>
           <Text secondary caption bold>
             WELCOME
           </Text>
@@ -73,7 +74,7 @@ class App extends React.Component {
         </Block>
         <Image
           style={styles.topIcon}
-          source={require("./assets/top-right.png")}
+          source={require('./assets/top-right.png')}
         />
       </Block>
     );
@@ -88,7 +89,7 @@ class App extends React.Component {
         horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.scroll}
-        onScroll={event => {
+        onScroll={(event) => {
           let x = event.nativeEvent.contentOffset.x;
           if (x < 0 || x > 310) return;
           if (x >= 80)
@@ -98,15 +99,15 @@ class App extends React.Component {
         scrollEventThrottle={16}
       >
         <Block
-          space={"between"}
+          space={'between'}
           style={[styles.card, selectedCard === 0 && styles.rank]}
         >
           <Image
             style={styles.cardIcon}
             source={
               selectedCard === 0
-                ? require("./assets/light-active.png")
-                : require("./assets/light.png")
+                ? require('./assets/light-active.png')
+                : require('./assets/light.png')
             }
           />
           <Text title bold white>
@@ -122,7 +123,7 @@ class App extends React.Component {
               gray
               style={[
                 { paddingTop: 5 },
-                selectedCard === 0 && { color: theme.colors.light_white }
+                selectedCard === 0 && { color: theme.colors.light_white },
               ]}
             >
               Between 5,346 Users
@@ -131,19 +132,19 @@ class App extends React.Component {
         </Block>
 
         <Block
-          space={"between"}
+          space={'between'}
           style={[styles.card, selectedCard === 1 && styles.stats]}
         >
           <Image
             style={styles.cardIcon}
             source={
               selectedCard === 1
-                ? require("./assets/star-active.png")
-                : require("./assets/star.png")
+                ? require('./assets/star-active.png')
+                : require('./assets/star.png')
             }
           />
           <Text title bold white>
-            {status.answers.toString() + "%"}
+            {status.answers.toString() + '%'}
           </Text>
           <Block flex={false}>
             <Text caption bold white>
@@ -155,7 +156,7 @@ class App extends React.Component {
               gray
               style={[
                 { paddingTop: 5 },
-                selectedCard === 1 && { color: theme.colors.light_white }
+                selectedCard === 1 && { color: theme.colors.light_white },
               ]}
             >
               At your first attempt
@@ -164,15 +165,15 @@ class App extends React.Component {
         </Block>
 
         <Block
-          space={"between"}
+          space={'between'}
           style={[styles.card, selectedCard === 2 && styles.score]}
         >
           <Image
             style={styles.cardIcon}
             source={
               selectedCard === 2
-                ? require("./assets/fire-active.png")
-                : require("./assets/fire.png")
+                ? require('./assets/fire-active.png')
+                : require('./assets/fire.png')
             }
           />
           <Text title bold white>
@@ -188,7 +189,7 @@ class App extends React.Component {
               gray
               style={[
                 { paddingTop: 5 },
-                selectedCard === 2 && { color: theme.colors.light_white }
+                selectedCard === 2 && { color: theme.colors.light_white },
               ]}
             >
               After two weeks
@@ -196,13 +197,13 @@ class App extends React.Component {
           </Block>
         </Block>
         <Block
-          color={"leader"}
-          space={"between"}
+          color={'leader'}
+          space={'between'}
           style={[styles.card, { marginRight: 50, borderWidth: 0 }]}
         >
           <Image
             style={styles.cardIcon}
-            source={require("./assets/ranking.png")}
+            source={require('./assets/ranking.png')}
           />
           <Block flex={false}>
             <Text caption bold white>
@@ -218,17 +219,17 @@ class App extends React.Component {
     return (
       <Block
         center
-        color={"white"}
+        color={'white'}
         style={{
           paddingTop: 10,
           marginHorizontal: 10,
           borderTopLeftRadius: 20,
-          borderTopRightRadius: 20
+          borderTopRightRadius: 20,
         }}
       >
         <Image
           style={styles.cardIcon}
-          source={require("./assets/collapse.png")}
+          source={require('./assets/collapse.png')}
         />
         <Text black bold footer style={{ paddingTop: 10 }}>
           Week 2
@@ -248,11 +249,11 @@ class App extends React.Component {
 
     return (
       <ImageBackground
-        source={require("./assets/back.png")}
+        source={require('./assets/back.png')}
         style={styles.safe}
       >
         <SafeAreaView style={styles.safe}>
-          <StatusBar barStyle={"light-content"} />
+          <StatusBar barStyle={'light-content'} />
           {this.renderHeader()}
           {this.renderCards()}
           {this.renderFooter()}
@@ -263,28 +264,28 @@ class App extends React.Component {
 }
 
 App.defaultProps = {
-  user: "Michael S.",
+  user: 'Michael S.',
   status: {
     rank: 384,
     answers: 45,
-    score: 3.684
+    score: 3.684,
   },
-  week: 2
+  week: 2,
 };
 
 export default App;
 
 const styles = StyleSheet.create({
   safe: {
-    flex: 1
+    flex: 1,
   },
   header: {
     paddingTop: 30,
     paddingBottom: 55,
-    paddingHorizontal: 20
+    paddingHorizontal: 20,
   },
   scroll: {
-    paddingLeft: 20
+    paddingLeft: 20,
   },
   card: {
     width: 150,
@@ -294,29 +295,29 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     marginHorizontal: 5,
     borderColor: theme.colors.gray,
-    borderWidth: 1
+    borderWidth: 1,
   },
   rank: {
     height: 340,
     borderWidth: 0,
-    backgroundColor: theme.colors.rank
+    backgroundColor: theme.colors.rank,
   },
   stats: {
     height: 340,
     borderWidth: 0,
-    backgroundColor: theme.colors.stats
+    backgroundColor: theme.colors.stats,
   },
   score: {
     height: 340,
     borderWidth: 0,
-    backgroundColor: theme.colors.score
+    backgroundColor: theme.colors.score,
   },
   topIcon: {
     height: 32,
-    width: 32
+    width: 32,
   },
   cardIcon: {
     height: 22,
-    width: 22
-  }
+    width: 22,
+  },
 });

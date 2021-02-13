@@ -1,13 +1,14 @@
-import React from "react";
-import { Platform, Image, MaskedViewIOS, Text } from "react-native";
-import { LinearGradient } from "expo";
+import React from 'react';
+import { Image, MaskedViewIOS, Platform, Text } from 'react-native';
+
+import { LinearGradient } from 'expo-linear-gradient';
 
 export const colors = {
-  primary: "#363636",
-  secondary: "#b9b9b9",
-  gray: "#f8f8f8",
-  black: "#000",
-  white: "#FFF"
+  primary: '#363636',
+  secondary: '#b9b9b9',
+  gray: '#f8f8f8',
+  black: '#000',
+  white: '#FFF',
 };
 
 export const sizes = {
@@ -19,30 +20,30 @@ export const sizes = {
   title: 22,
   h1: 18,
   h2: 16,
-  small: 12
+  small: 12,
 };
 
 export const fonts = {
   h1: {
-    fontSize: sizes.h1
+    fontSize: sizes.h1,
   },
   h2: {
-    fontSize: sizes.h2
+    fontSize: sizes.h2,
   },
   small: {
-    fontSize: sizes.small
+    fontSize: sizes.small,
   },
   title: {
-    fontSize: sizes.title
-  }
+    fontSize: sizes.title,
+  },
 };
 
-export const GradientText = props => {
-  if (Platform.OS === "ios")
+export const GradientText = (props) => {
+  if (Platform.OS === 'ios')
     return (
       <MaskedViewIOS maskElement={<Text {...props} />}>
         <LinearGradient
-          colors={["#d90646", "#eb402c"]}
+          colors={['#d90646', '#eb402c']}
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}
         >
@@ -51,15 +52,15 @@ export const GradientText = props => {
       </MaskedViewIOS>
     );
 
-  return <Text {...props} style={[props.style, { color: "#d90646" }]} />;
+  return <Text {...props} style={[props.style, { color: '#d90646' }]} />;
 };
 
-export const GradientIcon = props => {
-  if (Platform.OS === "ios")
+export const GradientIcon = (props) => {
+  if (Platform.OS === 'ios')
     return (
       <MaskedViewIOS maskElement={<Image {...props} />}>
         <LinearGradient
-          colors={["#d90646", "#eb402c"]}
+          colors={['#d90646', '#eb402c']}
           start={{ x: 0, y: 0 }}
           end={{ x: 0, y: 1 }}
         >

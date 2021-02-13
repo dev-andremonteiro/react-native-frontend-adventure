@@ -7,14 +7,19 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "expo": "^32.0.0",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "expo": "^40.0.0",
+    "expo-asset": "~8.2.1",
+    "expo-font": "~8.4.0",
+    "expo-linear-gradient": "~8.4.0",
+    "react": "16.13.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native-gesture-handler": "~1.8.0",
+    "react-native-screens": "~2.15.2",
     "react-native-swipeout": "^2.3.6",
     "react-navigation": "^3.3.2"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "8.3.0"
   },
   "private": true
 }

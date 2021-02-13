@@ -1,16 +1,18 @@
-import React from "react";
+import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
   Image,
-  Switch,
+  SafeAreaView,
   ScrollView,
-  StatusBar
-} from "react-native";
-import { Block, Text } from "../../components";
-import { sizes, GradientText } from "../../theme";
-import { profile } from "../../mock";
-import { LinearGradient } from "expo";
+  StatusBar,
+  StyleSheet,
+  Switch,
+} from 'react-native';
+
+import { LinearGradient } from 'expo-linear-gradient';
+
+import { Block, Text } from '../../components';
+import { profile } from '../../mock';
+import { GradientText, sizes } from '../../theme';
 
 class Item extends React.Component {
   render() {
@@ -20,17 +22,17 @@ class Item extends React.Component {
       <Block
         row
         center
-        space={"between"}
+        space={'between'}
         white
         style={{
           height: 50,
           paddingHorizontal: 15,
           borderBottomWidth: StyleSheet.hairlineWidth,
-          borderBottomColor: "#ccc"
+          borderBottomColor: '#ccc',
         }}
       >
         {paintTitle ? (
-          <GradientText style={{ fontSize: sizes.h2, fontWeight: "600" }}>
+          <GradientText style={{ fontSize: sizes.h2, fontWeight: '600' }}>
             {title}
           </GradientText>
         ) : (
@@ -44,7 +46,7 @@ class Item extends React.Component {
             ? custom
             : !paintTitle && (
                 <Image
-                  source={require("../../assets/right-arrow.png")}
+                  source={require('../../assets/right-arrow.png')}
                   style={{ height: 12, width: 7.5 }}
                 />
               )}
@@ -56,17 +58,17 @@ class Item extends React.Component {
 
 export default class Profile extends React.Component {
   state = {
-    switch: false
+    switch: false,
   };
 
   componentDidMount() {
     this.setState({ switch: this.props.info.notifications });
 
-    this._navListener1 = this.props.navigation.addListener("willFocus", () =>
-      StatusBar.setBarStyle("light-content")
+    this._navListener1 = this.props.navigation.addListener('willFocus', () =>
+      StatusBar.setBarStyle('light-content')
     );
-    this._navListener2 = this.props.navigation.addListener("willBlur", () =>
-      StatusBar.setBarStyle("default")
+    this._navListener2 = this.props.navigation.addListener('willBlur', () =>
+      StatusBar.setBarStyle('default')
     );
   }
 
@@ -80,7 +82,7 @@ export default class Profile extends React.Component {
 
     return (
       <LinearGradient
-        colors={["#d90646", "#eb402c"]}
+        colors={['#d90646', '#eb402c']}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
       >
@@ -88,19 +90,19 @@ export default class Profile extends React.Component {
           <Block
             flex={false}
             row
-            space={"between"}
+            space={'between'}
             style={{
               paddingHorizontal: 10,
               paddingVertical: 15,
-              alignItems: "flex-start"
+              alignItems: 'flex-start',
             }}
           >
-            <Text white h2 style={{ fontFamily: "Lato-Semibold" }}>
+            <Text white h2 style={{ fontFamily: 'Lato-Semibold' }}>
               Edit
             </Text>
             <Block flex={false} center middle style={{ paddingTop: 5 }}>
               <Image
-                source={require("../../assets/power.png")}
+                source={require('../../assets/power.png')}
                 style={{ height: 17, width: 16 }}
               />
             </Block>
@@ -118,7 +120,7 @@ export default class Profile extends React.Component {
             <Text white bold title style={{ marginBottom: 15 }}>
               {name}
             </Text>
-            <Text white small style={{ textAlign: "center" }}>
+            <Text white small style={{ textAlign: 'center' }}>
               {description}
             </Text>
           </Block>
@@ -140,38 +142,38 @@ export default class Profile extends React.Component {
         >
           {[
             {
-              title: "Email address",
-              text: email
+              title: 'Email address',
+              text: email,
             },
             {
-              title: "Telephone",
-              text: telephone
+              title: 'Telephone',
+              text: telephone,
             },
             {
-              title: "Notifications",
+              title: 'Notifications',
               custom: (
                 <Switch
                   onValueChange={() =>
                     this.setState({ switch: !this.state.switch })
                   }
                   value={this.state.switch}
-                  trackColor={{ false: "#ccc", true: "#d90646" }}
+                  trackColor={{ false: '#ccc', true: '#d90646' }}
                 />
-              )
+              ),
             },
             {
-              title: "Settings"
+              title: 'Settings',
             },
             {
-              title: "Feedback"
+              title: 'Feedback',
             },
             {
-              title: "Get Help"
+              title: 'Get Help',
             },
             {
-              title: "Delete account",
-              paint: true
-            }
+              title: 'Delete account',
+              paint: true,
+            },
           ].map((item, index) => {
             const { title, text, custom, paint } = item;
             return (
@@ -180,7 +182,7 @@ export default class Profile extends React.Component {
                 text={text}
                 custom={custom}
                 paintTitle={paint}
-                key={"option_" + index}
+                key={'option_' + index}
               />
             );
           })}
@@ -191,5 +193,5 @@ export default class Profile extends React.Component {
 }
 
 Profile.defaultProps = {
-  info: profile
+  info: profile,
 };

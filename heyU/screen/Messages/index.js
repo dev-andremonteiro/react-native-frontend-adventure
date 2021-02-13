@@ -1,51 +1,53 @@
-import React from "react";
+import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
   Image,
-  TouchableOpacity,
+  SafeAreaView,
   ScrollView,
-  StatusBar
-} from "react-native";
-import { Block, Text, ImageNotify } from "../../components";
-import { sizes, GradientText, GradientIcon } from "../../theme";
-import { messages } from "../../mock";
-import { LinearGradient } from "expo";
-import Swipeout from "react-native-swipeout";
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+import Swipeout from 'react-native-swipeout';
+
+import { LinearGradient } from 'expo-linear-gradient';
+
+import { Block, ImageNotify, Text } from '../../components';
+import { messages } from '../../mock';
+import { GradientIcon, GradientText, sizes } from '../../theme';
 
 const swipeoutBtns = [
   {
     component: (
-      <Block color={"#ddd"} center space={"between"} style={{ padding: 15 }}>
+      <Block color={'#ddd'} center space={'between'} style={{ padding: 15 }}>
         <Image
-          source={require("../../assets/more.png")}
+          source={require('../../assets/more.png')}
           style={{ height: 4, width: 16, marginTop: 9 }}
         />
         <Text primary>More</Text>
       </Block>
-    )
+    ),
   },
   {
     component: (
       <LinearGradient
-        colors={["#d90646", "#eb402c"]}
+        colors={['#d90646', '#eb402c']}
         start={{ x: 0, y: 0 }}
         end={{ x: 0, y: 1 }}
         style={{
-          alignItems: "center",
-          justifyContent: "space-between",
+          alignItems: 'center',
+          justifyContent: 'space-between',
           padding: 15,
-          flex: 1
+          flex: 1,
         }}
       >
         <Image
-          source={require("../../assets/delete.png")}
+          source={require('../../assets/delete.png')}
           style={{ height: 18, width: 14 }}
         />
         <Text white>Delete</Text>
       </LinearGradient>
-    )
-  }
+    ),
+  },
 ];
 
 export default class Messages extends React.Component {
@@ -54,22 +56,22 @@ export default class Messages extends React.Component {
       header: (
         <SafeAreaView
           style={{
-            backgroundColor: "#FFF",
-            borderBottomColor: "#ccc",
-            borderBottomWidth: StyleSheet.hairlineWidth
+            backgroundColor: '#FFF',
+            borderBottomColor: '#ccc',
+            borderBottomWidth: StyleSheet.hairlineWidth,
           }}
         >
           <Block
             row
-            space={"between"}
+            space={'between'}
             style={{
               paddingHorizontal: 10,
               paddingVertical: 15,
-              alignItems: "flex-start"
+              alignItems: 'flex-start',
             }}
           >
             <GradientText
-              style={{ fontFamily: "Lato-Semibold", fontSize: sizes.h2 }}
+              style={{ fontFamily: 'Lato-Semibold', fontSize: sizes.h2 }}
             >
               Edit
             </GradientText>
@@ -78,53 +80,53 @@ export default class Messages extends React.Component {
             </Text>
             <Block flex={false} center middle style={{ paddingTop: 5 }}>
               <GradientIcon
-                source={require("../../assets/search.png")}
+                source={require('../../assets/search.png')}
                 style={{ height: 18, width: 18 }}
               />
             </Block>
           </Block>
         </SafeAreaView>
-      )
+      ),
     };
   };
 
-  changeScreen = i => {
-    this.props.navigation.navigate("Chat", i);
+  changeScreen = (i) => {
+    this.props.navigation.navigate('Chat', i);
   };
 
   render() {
     return (
       <Block>
-        <StatusBar barStyle={"default"} />
+        <StatusBar barStyle={'default'} />
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{ flex: 1 }}
           contentContainerStyle={{ paddingBottom: 20 }}
           scrollEventThrottle={16}
         >
-          {this.props.messages.map(item => {
+          {this.props.messages.map((item) => {
             const { icon, name, lastMessage, time, notification } = item;
 
             return (
               <Swipeout
                 right={swipeoutBtns}
-                key={"message_" + name}
-                backgroundColor={"#FFF"}
+                key={'message_' + name}
+                backgroundColor={'#FFF'}
                 sensitivity={5}
               >
                 <TouchableOpacity
                   style={{
                     height: 75,
                     padding: 15,
-                    flexDirection: "row",
-                    alignItems: "center"
+                    flexDirection: 'row',
+                    alignItems: 'center',
                   }}
                   onPress={this.changeScreen.bind(this, item)}
                   delayPressIn={50}
                 >
                   <ImageNotify icon={icon} notify={notification} />
                   <Block middle style={{ paddingLeft: 15 }}>
-                    <Block row space={"between"}>
+                    <Block row space={'between'}>
                       <Text primary h1 style={{ paddingBottom: 5 }}>
                         {name}
                       </Text>
@@ -145,5 +147,5 @@ export default class Messages extends React.Component {
 }
 
 Messages.defaultProps = {
-  messages: messages
+  messages: messages,
 };
